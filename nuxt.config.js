@@ -1,11 +1,29 @@
 import colors from 'vuetify/es5/util/colors'
 
+const routerBase =
+  process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? {
+        router: {
+          base: '/shopper/',
+        },
+      }
+    : {}
+
+const favicon =
+  process.env.DEPLOY_ENV === 'GH_PAGES'
+    ? '/shopper/favicon.ico'
+    : '/favicon.ico'
+
 export default {
+  server: {
+    host: '0.0.0.0',
+  },
   /*
    ** Nuxt rendering mode
    ** See https://nuxtjs.org/api/configuration-mode
    */
-  mode: 'spa',
+  // mode: 'spa',
+
   /*
    ** Nuxt target
    ** See https://nuxtjs.org/api/configuration-target
@@ -27,7 +45,7 @@ export default {
         content: process.env.npm_package_description || '',
       },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: favicon }],
   },
   /*
    ** Global CSS
@@ -97,4 +115,6 @@ export default {
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {},
+  ...routerBase,
+  generate: {},
 }

@@ -1,18 +1,26 @@
 ---
-title: Getting started
-description: 'Empower your NuxtJS application with @nuxt/content module: write in a content/ directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a Git-based Headless CMS.'
+title: Приложение Shopper
+description: 'Shooper — это современное прогрессиное веб-приложение, которое позволяет пользователям с удобством совершать покупки в интернете со своего мобильного устройства. А бизнесу с лёгкостью развернуть функционал интернет магазина.'
 ---
 
-Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.
+**Shooper** — это современное прогрессиное веб-приложение, которое позволяет пользователям с удобством совершать покупки в интернете со своего мобильного устройства. А бизнесу с лёгкостью развернуть функционал интернет магазина.
 
-## Writing content
+## Написание контента
 
 Learn how to write your `content/`, supporting Markdown, YAML, CSV and JSON: https://content.nuxtjs.org/writing.
 
-## Fetching content
+## Mobile first
 
-Learn how to fetch your content with `$content`: https://content.nuxtjs.org/fetching.
+Приложение оптимизировано для использования на современных мобильных устройствах, но может использоваться также и в браузере мобильного устройства или компьютера.
 
-## Displaying content
+## Отрисовка страниц на сервере
 
-Learn how to display your Markdown content with the `<nuxt-content>` component directly in your template: https://content.nuxtjs.org/displaying.
+Динамические данные собираются в статичные страницы, что позволяет поисковым системам индексировать их, а так же позволяет очень быстро доставлять контент клиентам.
+
+## Структурированные данные
+
+Структурированные данные позволяют отображать дополнительную информацию в результатах выдачи SERP, тем самым повышая CTR.
+
+## Семантическое ядро
+
+Гибкие инструменты для создания семантического ядра сайта.
