@@ -1,13 +1,10 @@
 import colors from 'vuetify/es5/util/colors'
 
-const routerBase =
-  process.env.DEPLOY_ENV === 'GH_PAGES'
-    ? {
-        router: {
-          base: '/shopper/',
-        },
-      }
-    : {}
+const routerBase = {
+  router: {
+    base: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/shopper/' : '/',
+  },
+}
 
 const favicon =
   process.env.DEPLOY_ENV === 'GH_PAGES'
