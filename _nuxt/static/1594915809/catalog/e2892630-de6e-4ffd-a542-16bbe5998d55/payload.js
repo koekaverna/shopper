@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/catalog/e2892630-de6e-4ffd-a542-16bbe5998d55", {data:[{}],fetch:[],mutations:[]});
