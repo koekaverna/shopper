@@ -1,15 +1,10 @@
 import colors from 'vuetify/es5/util/colors'
 
-const routerBase = {
-  router: {
-    base: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/shopper/' : '/',
-  },
+if (process.env.DEPLOY_ENV === 'GH_PAGES') {
+  process.env.ROUTER_BASE = '/shopper/'
+} else {
+  process.env.ROUTER_BASE = '/'
 }
-
-const favicon =
-  process.env.DEPLOY_ENV === 'GH_PAGES'
-    ? '/shopper/favicon.ico'
-    : '/favicon.ico'
 
 export default {
   server: {
@@ -42,7 +37,13 @@ export default {
         content: process.env.npm_package_description || '',
       },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: favicon }],
+    link: [
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: `${process.env.ROUTER_BASE}favicon.ico`,
+      },
+    ],
   },
   /*
    ** Global CSS
@@ -85,7 +86,11 @@ export default {
    ** Content module configuration
    ** See https://content.nuxtjs.org/configuration
    */
-  content: {},
+  content: {
+    markdown: {
+      remarkPlugins: () => ['~/plugins/remark-router-base-links.js'],
+    },
+  },
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
@@ -112,6 +117,8 @@ export default {
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {},
-  ...routerBase,
+  router: {
+    base: process.env.ROUTER_BASE,
+  },
   generate: {},
 }

@@ -1,6 +1,12 @@
 <template>
   <v-layout class="px-2" row wrap>
-    <v-flex v-for="(product, index) in products" :key="index" class="pa-2" xs6>
+    <v-flex
+      v-for="(product, index) in products"
+      :key="index"
+      class="pa-2"
+      xs6
+      md3
+    >
       <product-card :item="product"></product-card>
     </v-flex>
   </v-layout>
